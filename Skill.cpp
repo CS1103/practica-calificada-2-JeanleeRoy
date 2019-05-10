@@ -4,63 +4,46 @@
 
 #include "Skill.h"
 
-Defense::Defense(int level) {
-    this->level += level;
-}
+Defense::Defense(int level): level{level} {}
 
 // Defensas
 
-Elude::Elude() {
+Elude::Elude(int level):Defense{level} {}
 
+int Elude::get_level() {
+    return level;
 }
 
-int Elude::defense() {
-    return Defense::defense();
+Shield::Shield(int level):Defense{level} {}
+
+int Shield::get_level() {
+    return level;
 }
 
-Shield::Shield() {
+Armor::Armor(int level):Defense{level} {}
 
-}
-
-int Shield::defense() {
-    return Defense::defense();
-}
-
-Armor::Armor() {
-
-}
-
-int Armor::defense() {
-    return Defense::defense();
+int Armor::get_level() {
+    return level;
 }
 
 //Ataques
 
-Attack::Attack() {
+Attack::Attack(int power):power{power} {}
 
+Punch::Punch()(int power):Attack{power} {}
+
+int Punch::get_power() {
+    return power;
 }
 
-Punch::Punch() {
+Saber::Saber(int power):Attack{power} {}
 
+int Saber::get_power() {
+    return power;
 }
 
-int Punch::attack() {
-    return 0;
-}
+Firearm::Firearm(int power):Attack{power} {}
 
-
-Saber::Saber() {
-
-}
-
-int Saber::attack() {
-    return 0;
-}
-
-Firearm::Firearm() {
-
-}
-
-int Firearm::attack() {
-    return 0;
+int Firearm::get_power() {
+    return power;
 }

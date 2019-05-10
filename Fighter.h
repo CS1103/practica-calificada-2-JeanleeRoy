@@ -14,25 +14,28 @@ class Fighter {
 protected:
     vector<Defense*> defensas;
     vector<Attack*> ataques;
+    char identifica;
 public:
-    virtual int attack();
-    virtual int defense();
+    virtual int attack(char i) = 0;
+    virtual int defense(char i) = 0;
+    int ataque(char i);
+    int defensa(char i);
 };
 
 class BruceLee : public Fighter{
 public:
-    int attack() override ;
-    int defense() override ;
+    int attack(char i) override ;
+    int defense(char i) override ;
 };
 
 class ChuckNorris : public Fighter{
-    int attack() override ;
-    int defense() override ;
+    int attack(char i) override ;
+    int defense(char i) override ;
 };
 
 class JasonStaham : public Fighter{
-    int attack() override ;
-    int defense() override ;
+    int attack(char i) override ;
+    int defense(char i) override ;
 };
 
 #endif //PC2_FIGHTER_H

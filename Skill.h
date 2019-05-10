@@ -9,54 +9,54 @@
 
 class Defense{
 protected:
-    int level = 0;
+    int level;
 public:
     explicit Defense(int level);
-    virtual int defense() = 0;
+    virtual int get_level() = 0;
 };
 
 class Elude : public Defense{
 public:
-    Elude();
-    int defense() override ;
+    explicit Elude(int level);
+    int get_level() override ;
 };
 
 class Shield : public Defense{
-    Shield();
-    int defense() override ;
+    explicit Shield(int level);
+    int get_level() override ;
 };
 
 class Armor : public Defense{
-    Armor();
-    int defense() override ;
+    explicit Armor(int level);
+    int get_level() override ;
 };
 
 //Ataque
 
 class Attack{
 protected:
-    int power = 0;
+    int power;
 public:
-    Attack();
-    virtual int attack() = 0;
+    explicit Attack(int power);
+    virtual int get_power() = 0;
 };
 
 class Punch : public Attack{
 public:
-    Punch();
-    int attack() override;
+    explicit Punch(int power);
+    int get_power() override ;
 };
 
 class Saber : public Attack{
 public:
-    Saber();
-    int attack() override;
+    explicit Saber(int power);
+    int get_power() override ;
 };
 
 class Firearm : public Attack{
 public:
-    Firearm();
-    int attack() override;
+    explicit Firearm(int power);
+    int get_power() override ;
 };
 
 
