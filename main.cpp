@@ -1,6 +1,8 @@
 #include <iostream>
+#include "Arena.h"
+#include "Fighter.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    Arena arena;
     return 0;
 }
