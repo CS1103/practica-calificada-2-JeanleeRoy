@@ -21,7 +21,7 @@ void Fighter::ataque(char i) {
     }
 }
 
-int Fighter::defensa(int i) {
+int Fighter::defensa(char i) {
     switch (i){
         case 'P':
             Defense* defensa = new Elude(1);
@@ -32,7 +32,7 @@ int Fighter::defensa(int i) {
             defensas.push_back(defensa);
             break;
         case 'F':
-            Defense* defensa2 = new Elude(1);
+            Defense* defensa2 = new Armor(8);
             defensas.push_back(defensa);
             break;
     }

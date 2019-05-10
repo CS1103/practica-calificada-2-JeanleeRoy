@@ -22,11 +22,13 @@ public:
 };
 
 class Shield : public Defense{
+public:
     explicit Shield(int level);
     int get_level() override ;
 };
 
 class Armor : public Defense{
+public:
     explicit Armor(int level);
     int get_level() override ;
 };
